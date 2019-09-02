@@ -1,0 +1,143 @@
+page {
+  height: 100%;
+  width: 100%;
+  background-color: rgb(237, 239, 238);
+}
+
+.main {
+  height: 100%;
+  width: 100%;
+}
+
+.header {
+  width: 100%;
+  height: 32%;
+  background: white;
+  
+}
+
+.top {
+  
+  height: 25%;
+  width: 100%;
+  padding-left: 15rpx;
+  display: flex;
+  align-items: center;
+}
+
+.top .time {
+  width: 53%;
+}
+
+.top .bumen {
+  width: 47%;
+}
+
+.bumen .bm {
+  width: 90%;
+  display: flex;
+  align-items: center;
+}
+.bumen .bm .left{
+  width: 30%;
+}
+.bumen .bm .right{
+  width: 70%;
+	white-space: nowrap;
+	overflow: hidden; 
+	text-overflow:ellipsis;
+  color: #888;
+}
+.top .time, .top .bumen {
+  display: flex;
+  align-items: center;
+}
+
+.bottom {
+  width: 100%;
+  /* padding: 20rpx 0; */
+  display: flex;
+  height: 75%;
+  background-color: white;
+  flex-direction: column;
+  box-shadow: 0px -3px 0px #eaeaea inset;
+}
+.bot-main{
+  width: 96%;
+  margin: 0 auto;
+  height: 100%;
+}
+.bottom .body {
+  text-align: center;
+  height: 40%;
+}
+
+.bottom .title {
+  padding-left: 20rpx;
+  height: 30%;
+  display: flex;
+  align-items: center;
+}
+
+.bottom .title, .total {
+  font-size: 40rpx;
+  font-weight: bold;
+}
+
+.bottom view {
+  line-height: 50rpx;
+}
+
+.bottom .foot {
+  height: 30%;
+  display: flex;
+  justify-content: center;
+}
+.bottom .foot .body{
+   height: 80%;
+   width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.foot .yiwancheng {
+  color: green;
+}
+
+.foot .weiwancheng {
+  color: gold;
+}
+
+.foot .weilingqu {
+  color: red;
+}
+
+.bottom .foot view {
+  display: flex;
+  justify-content: center;
+  width: 30%;
+}
+
+.bottom .foot .body view:not(.last) {
+  border-right: 1px rgb(237, 239, 238) solid;
+}
+
+.rwlist {
+  color: #888;
+  font-size: 28rpx;
+  line-height: 55rpx;
+}
+
+.main-body {
+  width: 100%;
+  height: 67%;
+  overflow: scroll;
+}
+.time-lq{
+  display: flex;
+  justify-content: space-between;
+}
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  color: transparent;
+}

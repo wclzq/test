@@ -1,0 +1,23 @@
+<view class='main'>
+  <view class='header'>
+  <view class='shuoming'><text>注：选择异常将跳转到隐患上报</text></view>
+    <view class='btn'>
+      <view><wux-button block type="positive" disabled='{{sub}}'>提交 </wux-button></view>
+      
+    </view>
+  </view>
+  <wux-white-space size="small" />
+  <view class='body'>
+    <wux-white-space size="small" />
+    <view class='radios'>
+      <radio-group class="radio" bindchange="radioChange" wx:for="{{radioList}}" wx:key="index" data-index="{{index}}">
+        <view class='title'>{{index+1}}.{{item.problem}}</view>
+        <view>
+          <radio value="1">正常</radio>
+          <radio value="0">异常</radio>
+        </view>
+      </radio-group>
+      <!--  -->
+    </view>
+  </view>
+</view>

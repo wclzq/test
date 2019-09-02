@@ -1,0 +1,69 @@
+<view class='main'>
+  <form bindsubmit="formSubmit">
+    <view class='header'>
+      <view class='bm'>
+        <wux-field name="bm" initialValue="{{ bmlabel }}">
+          <wux-picker options="{{ options }}" value="请选择" cascade cols="1" bind:confirm="bm">
+            <wux-cell title="跟踪部门" is-link extra="{{ bmlabel }}"></wux-cell>
+          </wux-picker>
+        </wux-field>
+      </view>
+      <wux-white-space size="small" />
+      <view class='bm'>
+        <wux-field name="bmuser" initialValue="{{ bmuserlabel }}">
+          <wux-picker options="{{ options }}" value="请选择" cascade cols="1" bind:confirm="bmuser">
+            <wux-cell title="跟踪部门成员" is-link extra="{{ bmuserlabel }}"></wux-cell>
+          </wux-picker>
+        </wux-field>
+      </view>
+      <wux-white-space size="small" />
+      <view class='bm'>
+        <wux-cell-group title="问题描述">
+          <wux-cell hover-class="none">
+            <wux-field name="brief">
+             <input style='height:100rpx;' placeholder='请输入问题描述'></input>
+              <!-- <wux-textarea rows="3" placeholder='请输入问题描述' /> -->
+            </wux-field>
+          </wux-cell>
+        </wux-cell-group>
+      </view>
+      <wux-white-space size="small" />
+      <!-- 视频上传 -->
+      <view class='video'>
+        <wux-field name="video">
+          <view class='miaoshu'>添加视频</view>
+          <view class='add-video'>
+            <view class='add-v' bindtap='addvideo' hover-class='add-hov' wx:if="{{videoHidden==false}}">
+              <view class='add-icon'>+</view>
+              <view>添加视频</view>
+            </view>
+            <view class='video-img' wx:if="{{videoHidden}}">
+               <view class='out-video'>
+                <view class='del'>
+                  <button bindtap='delVideo' hover-class='del-hover'>删除</button>
+                </view>
+                <video src='{{videoPath}}'> </video>
+              </view>
+            </view>
+          </view>
+        </wux-field>
+      </view>
+      <wux-white-space size="small" />
+      <!-- 照片上传 -->
+      <view class='img'>
+            <block wx:for="{{imgList}}" wx:key="index">
+              <image src='{{item}}' data-src="{{item}}" bindtap='previewImage'></image>
+            </block>
+            <view class='add-img' bindtap='camera' hover-class='add-hov'>
+              <view class='add-icon'>+</view>
+              <view>添加图片</view>
+            </view>
+      </view>
+    </view>
+    <view class='body'>
+      <view class='btn'>
+        <button formType="submit" hover-class='btn-hover'>提交</button>
+      </view>
+    </view>
+  </form>
+</view>

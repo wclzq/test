@@ -1,0 +1,95 @@
+page {
+  width: 100%;
+  height: 100%;
+  background-color: rgb(237, 239, 238);
+}
+
+.main {
+  width: 100%;
+  height: 100%;
+}
+
+.header {
+  width: 100%;
+  height: 9%;
+  display: flex;
+  background-color: white;
+  box-shadow: 0px -3px 0px #eaeaea inset;
+}
+
+.tab {
+  width: 66.6%;
+  height: 100%;
+}
+
+.seclect {
+  height: 100%;
+  width: 33.3%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28rpx;
+}
+
+.right {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size:28rpx;
+  color:#80848f;
+
+}
+
+.card {
+  width: 100%;
+  background-color: white;
+}
+
+.content, .foot {
+  color: #888;
+  font-size: 28rpx;
+  line-height: 55rpx;
+  padding-left: 15rpx;
+}
+
+.title, .status {
+  line-height: 55rpx;
+  padding-left: 15rpx;
+  padding-top: 15rpx;
+  font-size: 28rpx;
+  font-weight: bold;
+}
+
+.img {
+  height: 150rpx;
+  width: 100%;
+}
+
+.img image {
+  height: 150rpx;
+  width: 90%;
+  border-radius: 10rpx;
+}
+
+.content .miaosu {
+  line-height: 40rpx;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+
+.status {
+  color: #ffd700;
+}
+
+.body {
+  width: 100%;
+  height: 91%;
+  overflow: scroll;
+}
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  color: transparent;
+}

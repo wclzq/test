@@ -1,0 +1,29 @@
+<view class='main'>
+  <view class='luxian'>
+    <view class='sub' hover-class='sub-hover'>提交</view>
+    <view class='lx'>路线名称：三楼</view>
+    <view class='time'>时间：09-08 12:12-09-09 12:11</view>
+    <view class='status'>
+      <view>
+        <image src='/images/lock_blue.svg'></image>
+        <text decode='true'>&nbsp;已签到的</text>
+      </view>
+      <view>
+        <image src='/images/lock_yellow.svg'></image>
+        <text decode='true'>&nbsp;正进行的</text> </view>
+      <view>
+        <image src='/images/lock_gray.svg'></image>
+        <text decode='true'>&nbsp;未解锁的</text> </view>
+    </view>
+  </view>
+  <view class='luxianlist'>
+    <wux-wing-blank size="small">
+      <wux-white-space size="small" />
+      <wux-cell-group title="">
+        <view style="border-bottom:2rpx solid #ececec;" wx:for="{{qdList}}" wx:key="index">
+          <wux-cell bind:click="check" thumb='/images/lock_yellow.svg' is-link title="{{item.title}}" extra="进行中"></wux-cell>
+        </view>
+      </wux-cell-group>
+    </wux-wing-blank>
+  </view>
+</view>

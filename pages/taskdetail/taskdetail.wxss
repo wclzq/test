@@ -1,0 +1,61 @@
+page{
+  width: 100%;
+  height: 100%;
+   background-color: rgb(237,239,238);
+}
+.main{
+  height: 100%;
+  width:100%;
+}
+.luxian{
+  background-color: white;
+  position: relative;
+  padding: 25rpx;
+
+}
+.lx{
+  line-height: 60rpx;
+  font-size: 30rpx;
+  font-weight: bold;
+  letter-spacing:1px;
+}
+.time{
+   color: #888;
+  font-size: 28rpx;
+  line-height: 60rpx;
+}
+.sub{
+  position: absolute;
+  color: #5cadff;
+  line-height: 60rpx;
+  font-size: 30rpx;
+  font-weight: bold;
+  letter-spacing:1px;
+  right: 25rpx;
+}
+.status{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.status view{
+  font-size: 30rpx;
+  width: 32%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+.status image{
+  width: 30rpx;
+  height: 30rpx;
+}
+.sub-hover{
+  background: #eaeaea;
+  border-radius: 5rpx;
+}
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  color: transparent;
+}

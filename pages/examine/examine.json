@@ -1,0 +1,12 @@
+{
+  "usingComponents": {
+   "wux-icon": "../../dist/icon/index",
+  "wux-badge": "../../dist/badge/index",
+  "wux-tabbar": "../../dist/tabbar/index",
+  "wux-tabbar-item": "../../dist/tabbar-item/index",
+  "tongji":"../../component/tongji/com-tongji",
+  "xunjian":"../../component/xunjian/com-xunjian",
+  "wenti":"../../component/wenti/com-wenti"
+  },
+  "navigationBarTitleText": "工程巡检"
+}

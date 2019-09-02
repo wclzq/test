@@ -1,0 +1,72 @@
+page{
+  width: 100%;
+  height: 100%;
+}
+.main{
+   width: 100%;
+  height: 100%;
+  background: rgb(248,250,252);
+}
+.top{
+  height: 50%;
+  background: #5cadff;
+}
+.log{
+  display: flex;
+  justify-content: space-around;
+  padding: 12% 0;
+}
+.log view{
+  font-size: 80rpx;
+  color: rgba(255, 255, 255, 0.5);
+  font-weight: bold;
+}
+.bottom{
+  position: absolute;
+  top: -70rpx;
+  font-size: 32rpx;
+  color: rgba(255, 255, 255, 0.9);
+  padding: 0 3%;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+.login{
+  width: 94%;
+  height: 30%;
+  background: white;
+  margin: 0 auto;
+  box-shadow: 0px 0px 4px #eaeaea;
+  position: fixed;
+  top: 30%;
+  left: 3%;
+  border-radius: 10rpx;
+  padding: 20rpx 0;
+}
+.sub{
+  width: 90%;
+  margin: 40rpx auto;
+}
+.reg{
+  display: flex;
+  justify-content: space-around;
+  align-content: center;
+  margin-top: 30%;
+}
+.reg view{
+  color: #5cadff;
+  text-align: center;
+}
+.weixin image{
+  width: 50rpx;
+  height: 50rpx;
+}
+.shuoming{
+  position: fixed;
+  bottom: 3%;
+  width: 100%;
+}
+.shuoming view{
+  text-align: center;
+  font-size: 30rpx;
+  color:#888;
+}

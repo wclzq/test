@@ -1,0 +1,32 @@
+{
+  "pages": [
+    "pages/home/home",
+    "pages/task/task",
+    "pages/taskdetail/taskdetail",
+    "pages/prodetail/prodetail",
+    "pages/login/login",
+    "pages/examine/examine",
+    "pages/untitled/untitled",
+    "pages/taskpool/taskpool",
+    "pages/trouble/trouble",
+    "pages/report/report",
+    "pages/camera/camera",
+    "pages/gettask/gettask"
+
+  ],
+  "requiredBackgroundModes": [
+    "location"
+  ],
+  "permission": {
+    "scope.userLocation": {
+      "desc": "高速公路行驶持续后台定位"
+    }
+  },
+  "window": {
+    "backgroundTextStyle": "light",
+    "backgroundColor": "#fff",
+    "navigationBarBackgroundColor": "#5cadff",
+    "navigationBarTitleText": "水利工程精准化",
+    "navigationBarTextStyle": "white"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "usingComponents": {
+    "wux-navbar": "../../dist/navbar/index",
+    "wux-icon": "../../dist/icon/index",
+    "wux-wing-blank": "../../dist/wing-blank/index",
+    "wux-white-space": "../../dist/white-space/index",
+    "wux-grids": "../../dist/grids/index",
+    "wux-grid": "../../dist/grid/index"
+  
+  }
+}

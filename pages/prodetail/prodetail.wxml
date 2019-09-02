@@ -1,0 +1,40 @@
+<view class='main'>
+  <view class='main-top'>
+    <view class='detail'>
+      <view class='top'>
+        <view class='title'>—— 问题发现 ——</view>
+        <view class='bianhao'>{{ problemInfo.id }}</view>
+      </view>
+      <view class='body'>
+        <view class='brief'>
+          问题描述：{{ problemInfo.description }}
+        </view>
+        <image src='/images/test.jpg' data-url='/images/test.jpg' bindtap='previewImg'></image>
+        <view class='line'></view>
+      </view>
+      <view class='bottom'>
+        <view>
+          <text class='add'>问题地点：</text>
+          <text>{{ problemInfo.problemAddress }}</text>
+        </view>
+        <view>
+          <text>发现是时间：</text>
+          <text>{{ problemInfo.creationTimeStr }}</text>
+        </view>
+        <view>
+          <text>问题发现人：</text>
+          <text>{{ problemInfo.creationName }}</text>
+        </view>
+      </view>
+    </view>
+    <view class='btom-card'>
+      <text class='bumen'>{{ problemInfo.processingPersonName }}</text>
+      <text>正在解决这个问题</text>
+    </view>
+  </view>
+  <view class='main-bottom'>
+    <view class='btn-btom'><wux-button block outline type="positive" style='width:100%;'>指派给其他人</wux-button></view>
+    <view class='btn-btom'><wux-button block type="positive" style='width:100%;'>已解决，上传描述</wux-button></view>
+       
+  </view>
+</view>

@@ -1,0 +1,72 @@
+<view class='main'>
+  <view class='header'>
+    <view class='top'>
+      <view class='time'>
+        <view>时间</view>
+        <view>
+          <wux-date-picker mode="datetime" value="{{ value1 }}" lang="{{ lang }}" data-index="1" data-mode="datetime" bind:confirm="switchTime">
+            <wux-cell title="" is-link extra="{{ displayValue1 }}"></wux-cell>
+          </wux-date-picker>
+        </view>
+      </view>
+      <view class='bumen'>
+        <view class='bm'>
+          <!-- <view class='left'>
+            部门
+          </view>
+          <view class='right' bindtap='seclet'>{{bumen}}</view> -->
+          <wux-picker style='width:100%;' options="{{ organizationList }}" value="请选择" cascade cols="1" data-index="3" bind:confirm="switchBm" >
+                <wux-cell is-link extra="{{ displayValue3 }}"></wux-cell>
+            </wux-picker>
+        </view>
+      </view>
+    </view>
+
+    <view class='bottom'>
+      <view class='bot-main'>
+        <view class='title'>
+          <text>任务完成情况</text>
+        </view>
+        <view class='body'>
+          <view class='total'>1</view>
+          <view>任务总数</view>
+        </view>
+        <view class='foot'>
+          <view class='body'>
+            <view>未完成：
+              <text class='weiwancheng'>0</text>
+            </view>
+            <view>已完成：
+              <text class='yiwancheng'>1</text>
+            </view>
+            <view class='last'>未领取：
+              <text class='weilingqu'>0</text>
+            </view>
+          </view>
+
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class='main-body'>
+    <wux-white-space size="small" />
+    <block wx:for="{{renwuList}}" wx:key="idx">
+      <wux-wing-blank size="default">
+        <wux-card>
+          <!-- title="{{item.title}}" extra="{{item.isdone==false?'未完成':'已完成'}}" -->
+          <view slot="body" class='rwlist'>
+            <view>
+              <text class='zq' style='background-color:#5cadff;color: white;font-size:25rpx;'>周期</text>任务名称：{{item.title}}</view>
+            <view class='time-lq'>
+              <view>时间：{{item.time}}</view>
+              <view style="color:#FFD700;">{{item.isdone==false?'未完成':'已完成'}}</view>
+            </view>
+            <view>所属部门：测试部门</view>
+          </view>
+          <view slot="footer">领取人：{{item.user}}</view>
+        </wux-card>
+        <wux-white-space size="small" />
+      </wux-wing-blank>
+    </block>
+  </view>
+</view>

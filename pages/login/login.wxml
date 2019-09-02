@@ -1,0 +1,46 @@
+<view class='main'>
+  <view class='top'>
+    <view class='log'>
+      <view>L</view>
+      <view>O</view>
+      <view>G</view>
+      <view>I</view>
+      <view>N</view>
+    </view>
+    
+  </view>
+  <wux-toptips id="wux-toptips" />
+  <view class='login'>
+  <view class='bottom'>登陆</view>
+    <wux-form id="wux-form" bind:change="onChange">
+      <view class='name'>
+        <wux-cell hover-class="none">
+          <wux-field name="userNameOrEmailAddress" initialValue="">
+            <wux-input label="账号"  placeholder='请输入账号' />
+          </wux-field>
+        </wux-cell>
+      </view>
+      
+      <view class='pwd'>
+        <wux-cell hover-class="none ">
+          <wux-field name="password" initialValue="">
+            <wux-input label="密码 " placeholder='请输入密码' type='password' />
+          </wux-field>
+        </wux-cell>
+      </view>
+
+      <view class="sub">
+        <wux-button block type="positive" bindtap='onSubmit'>登陆</wux-button>
+      </view>
+    </wux-form>
+
+  </view>
+  <!-- <view class='reg'>
+    <view class='weixin'>
+    微信登陆
+       <image src='/images/weixin.png'></image>
+    </view>
+    <view>注册</view>
+  </view> -->
+  <view class='shuoming'><view>@这里可以写说明文字</view></view>
+</view>

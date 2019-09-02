@@ -1,0 +1,84 @@
+<view class='main'>
+  <view class='detail'>
+    <view class='title'>
+      <text class='zq' style='background-color:#5cadff;color: white;font-size:25rpx;'>周期</text>
+      <text style='color: #ffd700;'>{{num==0?'单人':'多人'}} </text>
+      <text>任务名称:多人任务</text>
+    </view>
+    <view class='body'>
+      <view>
+        <text>所属部门： </text>
+        <text class='right'>测试部</text>
+      </view>
+      <view>
+        <text>开始时间： </text>
+        <text class='right'>09-12 12:22:21</text>
+      </view>
+      <view>
+        <text>结束时间： </text>
+        <text class='right'>09-13 12:22:22</text>
+      </view>
+      <view>
+        <text>人员： </text>
+        <text class='right'>{{num==0?'单人':'多人'}}</text>
+      </view>
+      <view>
+        <text>次数： </text>
+        <text class='right'>每天一次</text>
+      </view>
+    </view>
+  </view>
+  <wux-white-space size="small" />
+  <view class='task-list'>
+    <block wx:if='{{num==0}}'>
+      <block wx:for="{{taskList}}" wx:key="index">
+        <wux-white-space size="small" />
+
+        <view class='card-list'>
+
+          <view style="font-weight:bold;color:black;">
+            <text>路线名称：</text>
+            <text>{{item.name}}</text>
+          </view>
+          <view class='time-lq'>
+            <view>时间：{{item.time}}</view>
+            <view style="color:#FFD700;">未领取</view>
+          </view>
+          <view>
+            <text>所属部门：</text>
+            <text>{{item.bumen}}</text>
+          </view>
+        </view>
+      </block>
+    </block>
+    <block wx:else>
+      <checkbox-group bindchange="checkChange">
+        <block wx:for="{{taskList}}" wx:key="index">
+          <wux-white-space size="small" />
+          <view class='card-list check'>
+            <view class='check-icon'>
+              <checkbox value="{{item.name}}" />
+            </view>
+            <view style="font-weight:bold;color:black;">
+              <text>路线名称：</text>
+              <text>{{item.name}}</text>
+            </view>
+            <view class='time-lq'>
+              <view>时间：{{item.time}}</view>
+              <view style="color:#FFD700;">未领取</view>
+            </view>
+            <view>
+              <text>所属部门：</text>
+              <text>{{item.bumen}}</text>
+            </view>
+          </view>
+        </block>
+      </checkbox-group>
+    </block>
+  </view>
+  <view class='bottom-btn'>
+    <view class='btn'>
+      <button bindtap='getTask' hover-class='btn-hover'>领取</button>
+    </view>
+  </view>
+</view>

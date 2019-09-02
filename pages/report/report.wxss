@@ -1,0 +1,148 @@
+page{
+  width: 100%;
+  height: 100%;
+   background-color: rgb(237,239,238);
+}
+.main{
+  height: 100%;
+  width:100%;
+}
+.header{
+  position: relative;
+  height: 90%;
+  box-shadow: 0px -3px 0px #eaeaea inset;
+  overflow: scroll;
+}
+.body{
+  height: 9%;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.btn{
+  width: 94%;
+}
+.btn button{
+  background: #387ef5;
+  color: white !important;
+}
+.btn-hover{
+   background-color: #0c60ee !important;
+   color: white !important;
+}
+
+.bm{
+ background: white;
+}
+.video{
+ background: white;
+  height: 400rpx;
+  padding: 0 20rpx 20rpx 20rpx;
+}
+.miaoshu{
+  color: black;
+  font-weight: bold;
+  font-size: 30rpx;
+  line-height: 80rpx;
+}
+.add-video{
+  border: 1px #888 dotted;
+  height: 300rpx;
+}
+
+.add-v{
+  height: 100%;
+  width: 50%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.add-v view{
+  line-height: 70rpx;
+  color: #888;
+}
+.video-img image{
+  width: 80rpx;
+  height: 80rpx;
+}
+.add-hov{
+  background-color: #eaeaea !important;
+}
+.wux-cell-group__hd{
+  color: black !important;
+  font-weight: bold;
+  font-size: 30rpx !important;
+}
+.video-img{
+  width: 100%;
+  height: 100%;
+   background-color: #eaeaea;
+   margin: 0 auto;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+.video-img .out-video,.out-video video{
+  height: 100%;
+  width: 100%;
+}
+.video-img .out-video{
+  position: relative;
+}
+.img{
+  background: white;
+  width: 100%;
+  display: flex;
+  justify-content: start;
+  flex-wrap: wrap;
+}
+
+.img image{
+  width: 30%;
+  height: 180rpx;
+  margin: 10rpx 0 10rpx 2.5%;
+}
+.img .add-img{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 30rpx;
+  margin: 10rpx 0 10rpx 2.5%;
+   width: 180rpx;
+  height: 180rpx;
+  color: #888;
+  border: 1px #888 dotted;
+}
+.add-icon{
+  text-align:center;
+  font-size: 80rpx;
+}
+.del{
+  position: absolute;
+  right: 10rpx;
+  top: 10rpx;
+  width: 100rpx;
+  height: 50rpx;
+  z-index: 999;
+}
+.del button{
+  background-color:#ef473a;
+  font-size: 20rpx;
+  color:white;
+  letter-spacing:1px;
+}
+.del-hover{
+  background-color:#e42112 !important;
+}
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  color: transparent;
+}

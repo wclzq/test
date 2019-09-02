@@ -1,0 +1,41 @@
+<view class='main'>
+  <view class='my-container'>
+  <block wx:if="{{current==0}}">
+    <tongji />
+  </block>
+  <block wx:elif="{{current==1}}">
+    <xunjian />
+  </block>
+  <block wx:elif="{{current==2}}">
+    <wenti />
+  </block>
+  </view>
+  <view class='tabbar'>
+    <wux-tabbar defaultCurrent="0" position="bottom" safeArea theme="positive" bindchange="onChange">
+      <wux-tabbar-item title="统计">
+        <wux-badge slot="icon-on">
+            <image src='/images/icon/tongji_off.svg'></image>
+        </wux-badge>
+        <wux-badge slot="icon-off">
+          <image src='/images/icon/tongji_on.svg'></image>
+        </wux-badge>
+      </wux-tabbar-item>
+      <wux-tabbar-item title="巡查">
+        <wux-badge slot="icon-on">
+          <image src='/images/icon/xuncha_off.svg'></image>
+        </wux-badge>
+        <wux-badge slot="icon-off">
+          <image src='/images/icon/xuncha_on.svg'></image>
+        </wux-badge>
+      </wux-tabbar-item>
+      <wux-tabbar-item title="问题汇总">
+        <wux-badge slot="icon-on">
+          <image src='/images/icon/wenti_off.svg'></image>
+        </wux-badge>
+        <wux-badge slot="icon-off">
+          <image src='/images/icon/wenti_on.svg'></image>
+        </wux-badge>
+      </wux-tabbar-item>
+    </wux-tabbar>
+  </view>
+</view>

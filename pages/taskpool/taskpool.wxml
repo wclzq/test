@@ -1,0 +1,26 @@
+<view class='main'>
+  <view class='header'>
+    <wux-segmented-control default-current="{{current}}" values="{{ date }}" bind:change="onChange" />
+  </view>
+  <view class='body'>
+    <wux-white-space size="small" />
+    <wux-wing-blank size="default">
+      <block wx:for="{{renwuList}}" wx:key="idx">
+        <wux-card bindtap="getTask" bindtap='getTask' data-num="{{item.pnumber}}">
+          <view slot="body" class='rwlist'>
+            <view class='name'>
+              <text class='zq' style='background-color:#5cadff;color: white;font-size:25rpx;'>周期</text>
+              <text style="color:#FFD700;">{{item.pnumber==0?'单人':'多人'}} </text>任务名称：{{item.title}}</view>
+            <view class='time-lq'>
+              <view>时间：{{item.time}}</view>
+              <view style="color:#FFD700;">{{item.isdone==false?'未领取':'已完成'}}</view>
+            </view>
+            <view>所属部门：测试部门</view>
+          </view>
+        </wux-card>
+        <wux-white-space size="small" />
+      </block>
+    </wux-wing-blank>
+  </view>
+
+</view>

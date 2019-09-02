@@ -1,0 +1,55 @@
+<view class='main'>
+  <view class='detail'>
+    <view class='title'>
+      <text class='zq' style='background-color:#5cadff;color: white;font-size:25rpx;'>周期</text>
+      <text style='color: #ffd700;'>多人 </text>
+      <text>任务名称:多人任务</text>
+    </view>
+    <view class='body'>
+      <view>
+        <text>所属部门： </text>
+        <text class='right'>测试部</text>
+      </view>
+      <view>
+        <text>开始时间： </text>
+        <text class='right'>09-12 12:22:21</text>
+      </view>
+      <view>
+        <text>结束时间： </text>
+        <text class='right'>09-13 12:22:22</text>
+      </view>
+      <view>
+        <text>人员： </text>
+        <text class='right'>多人</text>
+      </view>
+      <view>
+        <text>次数： </text>
+        <text class='right'>每天一次</text>
+      </view>
+      <view class='btn'>
+        <!-- <wux-button block outline type="assertive">释放任务</wux-button> -->
+        <button hover-class="btn-hov">释放任务</button>
+      </view>
+    </view>
+  </view>
+  <view class='task-list'>
+    <block wx:for="{{taskList}}" wx:key="index">
+      <wux-white-space size="small" />
+      <view class='card-list' bindtap='taskDetail'>
+        <view class='ing'>进行中 <wux-icon size='30' color='#888' type="ios-arrow-forward" /></view>
+        <view style="font-weight:bold;color:black;">
+          <text>路线名称：</text>
+          <text>{{item.name}}</text>
+        </view>
+        <view>
+          <text>时间：</text>
+          <text>{{item.time}}</text>
+        </view>
+        <view>
+          <text>所属部门：</text>
+          <text>{{item.bumen}}</text>
+        </view>
+      </view>
+    </block>
+  </view>
+</view>

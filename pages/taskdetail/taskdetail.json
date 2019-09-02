@@ -1,0 +1,10 @@
+{
+  "usingComponents": {
+    "wux-icon": "../../dist/icon/index",
+    "wux-cell-group": "../../dist/cell-group/index",
+    "wux-cell": "../../dist/cell/index",
+    "wux-wing-blank": "../../dist/wing-blank/index",
+    "wux-white-space": "../../dist/white-space/index"
+  },
+  "navigationBarTitleText": "任务详情"
+}

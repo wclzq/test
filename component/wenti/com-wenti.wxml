@@ -1,0 +1,62 @@
+<view class='main'>
+  <view class='header'>
+    <view class='tab'>
+      <wux-tabs defaultCurrent="所有问题">
+        <wux-tab key="需我解决" title="需我解决"></wux-tab>
+        <wux-tab key="所有问题" title="所有问题"></wux-tab>
+      </wux-tabs>
+    </view>
+    <view class='seclect'>
+      <!-- <view class='right' bindtap='seclet'>{{secletval}}</view> -->
+      <wux-picker style='width:100%;height:100%;background:white;' options="{{ options }}" value="请选择" cascade cols="1" data-index="3" bind:confirm="sec">
+        <wux-cell title="" is-link extra="{{ shaixuan }}"></wux-cell>
+      </wux-picker>
+    </view>
+  </view>
+  <view class='body'>
+    <block wx:for="{{problemList}}" wx:key="index">
+      <wux-wing-blank size="small">
+        <wux-white-space size="small" />
+        <view class='card' id="{{ item.id }}" bindtap='proDetail'>
+          <view>
+            <wux-row>
+              <wux-col span="10">
+                <view class='title'>问题名称</view>
+              </wux-col>
+              <wux-col span="2">
+                <view class='status'>
+                  <block wx:if="{{ item.problemFlow != 4 }}">未解决</block>
+                  <block wx:else>已解决</block>
+                </view>
+              </wux-col>
+            </wux-row>
+          </view>
+          <view class='content'>
+            <wux-row>
+              <wux-col span="8">
+                <view class='miaosu'>问题描述：{{item.description}}</view>
+                <view class='fxr'>发现人：{{item.creationName}}</view>
+                <view class='bumen'>跟进部门：{{item.organizationName}}</view>
+              </wux-col>
+              <wux-col span="4">
+                <view class='img'>
+                  <image src='/images/test.jpg'></image>
+                </view>
+              </wux-col>
+            </wux-row>
+          </view>
+          <view class='foot'>
+            <wux-row>
+              <wux-col span="5">
+                <view class='bianhao'>编号：{{item.id}}</view>
+              </wux-col>
+              <wux-col span="7">
+                <view class='time'>发现时间：{{item.creationTimeStr}}</view>
+              </wux-col>
+            </wux-row>
+          </view>
+        </view>
+      </wux-wing-blank>
+    </block>
+  </view>
+</view>

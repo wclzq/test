@@ -1,0 +1,24 @@
+<view class='main'>
+  <view class='nav'>
+    <wux-navbar theme="light">
+      <wux-icon slot="left" size="42" />
+      <view>水利工程精准化管理系统</view>
+      <wux-icon slot="right" type="ios-qr-scanner" size="42" />
+    </wux-navbar>
+  </view>
+  <wux-wing-blank size="small">
+    <wux-white-space size="large" />
+      <wux-grids col="2" style="height:100rpx;">
+        <block wx:for="{{titleList}}" wx:key="index">
+          <wux-grid thumb="{{item.icon}}" label="{{item.name}}" />
+        </block>
+      </wux-grids>
+
+    <wux-white-space size="large" />
+    <wux-grids square>
+      <block wx:for="{{menuList}}" wx:key="index">
+        <wux-grid thumb="{{item.icon}}" label="{{item.name}}" bind:click="jump" />
+      </block>
+    </wux-grids>
+  </wux-wing-blank>
+</view>
