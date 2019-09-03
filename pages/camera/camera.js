@@ -1,4 +1,8 @@
 // pages/report/report.js
+var upload = require('../../api/upload/upload.js')
+var uploadImg = upload.uploadImg
+var uploadVideo = upload.uploadVideo
+import { getOrganizationUnits } from '../../api/hiddenDanger/organizationUnits.js'
 Page({
 
   /**
@@ -10,29 +14,13 @@ Page({
     bmuservalue: '',
     bmuserlabel: '请选择',
     videoHidden: false,
-    videoPath:'',
-    address:null,
+    videoPath: '',
+    imgPath: '',
+    videoName: '',
+    imgName: '',
+    address: null,
     imgList: [],
-    options: [{
-      value: 'bj',
-      label: '北京市',
-    }, {
-      value: 'zj',
-      label: '浙江省',
-    }, {
-      value: 'gd',
-      label: '广东省',
-      disabled: true,
-    }, {
-      value: 'hn',
-      label: '测试开发的一个部门',
-    }, {
-      value: 'cq',
-      label: '重庆市',
-    }, {
-      value: 'sc',
-      label: '四川省',
-    }]
+    organizationList: []
   },
 
   /**
@@ -40,6 +28,21 @@ Page({
    */
   onLoad: function(options) {
     var id = options.id
+    var that = this
+    //获取部门信息
+    getOrganizationUnits().then(res => {
+      var result = res.result.items
+      var list = []
+      result.forEach(item => {
+        var li = {}
+        li.value = item.code
+        li.label = item.displayName
+        list.push(li)
+      })
+      that.setData({
+        organizationList: list
+      })
+    })
   },
   setValue(values, key, mode) {
 
@@ -65,17 +68,19 @@ Page({
       maxDuration: 60,
       camera: 'back',
       success(res) {
-        var videoImg = that.data.videoImg
         const videoPath = res.tempFilePath
+        var videoName = videoPath.split('//').pop()
         console.log(res)
         that.setData({
           videoHidden: true,
-          videoPath:videoPath
+          videoPath: videoPath,
+          videoName: videoName
         })
+
       }
     })
   },
-  delVideo(){
+  delVideo() {
     this.setData({
       videoHidden: false,
       videoPath: ''
@@ -96,27 +101,16 @@ Page({
       success: function(res) {
         // 无论用户是从相册选择还是直接用相机拍摄，路径都是在这里面
         var imgList = that.data.imgList;
-        var filePath = res.tempFilePaths[0]
-        imgList.push(filePath)
+        var imgPath = res.tempFilePaths[0]
+        imgList.push(imgPath)
+        var imgName = imgPath.split('//').pop()
         that.setData({
           imgList: imgList, //把照片路径存到变量中，
+          imgPath: imgPath,
+          imgName: imgName
         });
         //这个是使用微信接口保存文件到数据库
-        // wx.uploadFile({
-        //   url: "http://10.4.58.195:8088/uploadImg",
-        //   filePath: filePath,
-        //   header: {
-        //     "Content-Type": "multipart/form-data"
-        //   },
-        //   formData: {
-        //     userId: 10010, //可附加一些信息
-        //     imgName: "test.jpg"
-        //   },
-        //   name: 'imgfile',
-        //   success: function (res) {
-        //     console.log(res)
-        //   }
-        // })
+
       },
       fail: function(error) {
         console.error("调用本地相册文件时出错")
@@ -128,27 +122,33 @@ Page({
     });
   },
   formSubmit(e) {
-    console.log('sub')
-    console.log('Default Form Submit \n', e.detail.value)
+    var formData = e.detail.value
+    console.log('Default Form Submit \n', formData)
+    var data = this.data
+    formData.videoName = data.videoName
+    if (data.videoPath != '') {
+      console.log(data.videoPath)
+      uploadVideo(data.videoPath, formData)
+    }
   },
   getAddress(e) {
-    const that=this
+    const that = this
     wx.chooseLocation({
       success: function(res) {
         var latitude = res.latitude
         var longitude = res.longitude
-        var address=res.name
+        var address = res.name
         that.setData({
-          address:address
+          address: address
         })
         console.log(that.data.address)
       }
     })
   },
-  previewImage(e){
+  previewImage(e) {
     var src = e.currentTarget.dataset.src;
     wx.previewImage({
-      current:src,
+      current: src,
       urls: this.data.imgList,
     })
   },

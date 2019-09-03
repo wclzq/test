@@ -4,8 +4,8 @@
       <view class='time'>
         <view>时间</view>
         <view>
-          <wux-date-picker mode="datetime" value="{{ value1 }}" lang="{{ lang }}" data-index="1" data-mode="datetime" bind:confirm="switchTime">
-            <wux-cell title="" is-link extra="{{ displayValue1 }}"></wux-cell>
+          <wux-date-picker mode="datetime" value="{{ timeinit }}" lang="{{ lang }}" data-index="1" data-mode="datetime" bind:confirm="switchTime">
+            <wux-cell title="" is-link extra="{{ timelabel }}"></wux-cell>
           </wux-date-picker>
         </view>
       </view>
@@ -16,7 +16,7 @@
           </view>
           <view class='right' bindtap='seclet'>{{bumen}}</view> -->
           <wux-picker style='width:100%;' options="{{ organizationList }}" value="请选择" cascade cols="1" data-index="3" bind:confirm="switchBm" >
-                <wux-cell is-link extra="{{ displayValue3 }}"></wux-cell>
+                <wux-cell is-link extra="{{ bmlabel }}"></wux-cell>
             </wux-picker>
         </view>
       </view>

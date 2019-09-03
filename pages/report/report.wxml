@@ -3,7 +3,7 @@
     <view class='header'>
       <view class='bm'>
         <wux-field name="bm" initialValue="{{ bmlabel }}">
-          <wux-picker options="{{ options }}" value="请选择" cascade cols="1" bind:confirm="bm">
+          <wux-picker options="{{ organizationList }}" value="请选择" cascade cols="1" bind:confirm="bm">
             <wux-cell title="跟踪部门" is-link extra="{{ bmlabel }}"></wux-cell>
           </wux-picker>
         </wux-field>
@@ -11,7 +11,7 @@
       <wux-white-space size="small" />
       <view class='bm'>
         <wux-field name="bmuser" initialValue="{{ bmuserlabel }}">
-          <wux-picker options="{{ options }}" value="请选择" cascade cols="1" bind:confirm="bmuser">
+          <wux-picker options="{{ organizationList }}" value="请选择" cascade cols="1" bind:confirm="bmuser">
             <wux-cell title="跟踪部门成员" is-link extra="{{ bmuserlabel }}"></wux-cell>
           </wux-picker>
         </wux-field>
@@ -21,7 +21,7 @@
         <wux-cell-group title="问题描述">
           <wux-cell hover-class="none">
             <wux-field name="brief">
-             <input style='height:100rpx;' placeholder='请输入问题描述'></input>
+             <wux-input style='height:100rpx;' placeholder='请输入问题描述' />
               <!-- <wux-textarea rows="3" placeholder='请输入问题描述' /> -->
             </wux-field>
           </wux-cell>

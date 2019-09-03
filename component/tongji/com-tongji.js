@@ -15,9 +15,9 @@ Component({
    */
   data: {
     lang: 'zh_CN',
-    value1: [],
-    displayValue1: null,
-    displayValue3: '请选择部门 ',
+    timelabel: null,
+    timeinit:[],
+    bmlabel: '请选择部门 ',
     organizationList:[],
     renwuList: [
       { title: "一个测试任务", isdone: false, time: "每天一次", user: "ssw" },
@@ -34,7 +34,7 @@ Component({
     const that=this
     var today = format(new Date())
     that.setData({
-      displayValue1:today
+      timelabel:today
     })
    //获取部门信息
     getOrganizationUnits().then(res => {
@@ -66,12 +66,19 @@ Component({
     },
     switchBm(e) {
       const { index } = e.currentTarget.dataset
-      this.setValue(e.detail, index)
-      console.log(e.detail)
+      var values = e.detail
+      this.setData({
+        bmlval: values.value,
+        bmlabel: values.label
+      })
     },
     switchTime(e) {
       const { index, mode } = e.currentTarget.dataset
-      this.setValue(e.detail, index, mode)
+      var values = e.detail
+      this.setData({
+        timelval: values.value,
+        timelabel: values.label
+      })
     },
   }
 })
